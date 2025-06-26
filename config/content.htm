@@ -4,9 +4,75 @@
 <p>local: <a href="https://127.0.0.1:8449/reeborg/">https://127.0.0.1:8449/reeborg/</a></p>
 <p style="padding-left: 30px;">因為 reeborg 目錄為子模組, 指向 <a href="https://github.com/mdecycu/reeborg,">https://github.com/mdecycu/reeborg,</a> 因此程式開發部分均在子模組中進行, 採 cd reeborg, git pull origin main, cd .. 流程進行子模組程式碼更新.</p>
 <p>Web: <a href="https://mde.tw/cs101/reeborg">https://mde.tw/cs101/reeborg</a> </p><h1>Robot</h1>
+<p><a href="https://pythonpad.github.io/docs/examples.html">https://pythonpad.github.io/docs/examples.html</a> </p>
+<p><a href="https://github.com/pythonpad/pythonpad.js">https://github.com/pythonpad/pythonpad.js</a> </p>
 <p><a href="/downloads/cs1graphics.pdf">cs1graphics.pdf</a></p>
+<p>cs1graphics is a Python module specifically designed for introductory computer science courses, particularly those focusing on object-oriented programming and graphics. It provides a simple and intuitive way to create and manipulate graphical objects on a canvas, making it easier for beginners to visualize and understand programming concepts.</p>
+<p>Key features and concepts of cs1graphics include:</p>
+<p>Canvas:</p>
+<p style="padding-left: 30px;">The Canvas class represents the drawing window where graphical objects are displayed.</p>
+<p>Drawable Objects:</p>
+<p style="padding-left: 30px;">cs1graphics offers various classes for creating different shapes and elements, such as Circle, Rectangle,Text, Image, Polygon, and Path. These objects can be manipulated by setting properties like size, color, position, and border styles.</p>
+<p>Object-Oriented Principles:</p>
+<p style="padding-left: 30px;">The library is built upon object-oriented principles, allowing students to learn about classes, objects, methods, and attributes in a practical context.</p>
+<p>Animation:</p>
+<p style="padding-left: 30px;">It supports basic animation by allowing objects to be moved and transformed over time, often by repeatedly redrawing the canvas after changing object properties.</p>
+<p>Accessibility:</p>
+<p style="padding-left: 30px;">It aims to simplify graphics programming for beginners, abstracting away the complexities of underlying graphics libraries like Tkinter or PIL. <br/><br/>In essence, cs1graphics serves as a pedagogical tool to introduce fundamental programming concepts through visual and interactive graphics creation.</p>
 <p><a href="/downloads/cs1media.pdf">cs1media.pdf</a></p>
-<p><a href="/downloads/cs1robots.pdf">cs1robots.pdf</a></p><h1>Brython</h1>
+<p>cs1media is a Python library primarily designed for educational purposes, specifically for introductory computer science courses (often referred to as CS1). It provides a simplified interface for image manipulation, allowing students to easily load, modify, and display images.</p>
+<p>Key features of cs1media:</p>
+<p>Image Loading and Display:</p>
+<p style="padding-left: 30px;">It enables users to load images from files and display them in a window.</p>
+<p>Pixel-level Manipulation:</p>
+<p style="padding-left: 30px;">Users can access individual pixels within an image and modify their RGB color values. This allows for various image processing techniques like grayscale conversion, color replacement, or applying filters.</p>
+<p>Simplified Interface:</p>
+<p style="padding-left: 30px;">Compared to more complex image processing libraries, cs1media offers a straightforward set of functions and methods, making it accessible for beginners.</p>
+<p>Educational Context:</p>
+<p style="padding-left: 30px;">It is commonly used in environments like Pythonpad, which is an embeddable Python programming environment designed for web-based CS1 exercises.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from cs1media import *
+
+# Load an image
+img = load_picture("example.png")
+
+# Get image dimensions
+width, height = img.size()
+
+# Convert image to grayscale
+for y in range(height):
+    for x in range(width):
+        r, g, b = img.get(x, y)
+        gray = int(0.299 * r + 0.587 * g + 0.114 * b)
+        img.set(x, y, (gray, gray, gray))
+
+# Display the modified image
+img.show()</pre>
+<p><a href="/downloads/cs1robots.pdf">cs1robots.pdf</a></p>
+<p>cs1robots is a Python library designed for teaching introductory programming concepts using a robot simulation. It provides a simple, grid-based world where a virtual robot can perform basic actions like moving, turning, picking up, and putting down beepers. This library is inspired by RUR-PLE and aims to make learning programming more engaging through visual interaction.</p>
+<p>Key features and usage:</p>
+<p>Robot actions:</p>
+<p style="padding-left: 30px;">The cs1robots library allows users to program a robot to perform fundamental actions such as move(), turn_left(), pick_beeper(), and put_beeper().</p>
+<p>World interaction:</p>
+<p style="padding-left: 30px;">Robots can interact with walls and beepers within a customizable world.</p>
+<p>Visual feedback:</p>
+<p style="padding-left: 30px;">The library provides a graphical representation of the robot's actions and the world, making it easy to visualize program execution.</p>
+<p>Educational focus:</p>
+<p style="padding-left: 30px;">It is primarily used in educational settings to introduce concepts like loops, conditionals, and functions in a practical and visually intuitive manner.</p>
+<p>Install cs1robots:</p>
+<p style="padding-left: 30px;">pip install cs1-robots</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from cs1robots import *
+
+# Create a world (or load an existing one)
+create_world() 
+
+# Create a robot instance
+hubo = Robot()
+
+# Program the robot's actions
+hubo.move()
+hubo.turn_left()
+hubo.pick_beeper()</pre>
+<p></p><h1>Brython</h1>
 <p><button id="add1to100">1 add to 100</button></p>
 <!-- 導入 brython 程式庫 -->
 <p>
